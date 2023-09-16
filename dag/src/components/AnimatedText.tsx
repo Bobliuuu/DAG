@@ -4,8 +4,9 @@ import { motion } from "framer-motion";
 type AnimatedTextProps = {
   sentence: string;
   styling: string;
+  horizontal: boolean;
 };
-const AnimatedText: React.FC<AnimatedTextProps> = ({ sentence, styling }) => {
+const AnimatedText: React.FC<AnimatedTextProps> = ({ sentence, styling, horizontal }) => {
   const words = sentence.split(" ");
   const container = {
     hidden: { opacity: 0 },
@@ -17,18 +18,18 @@ const AnimatedText: React.FC<AnimatedTextProps> = ({ sentence, styling }) => {
   const child = {
     hidden: {
       opacity: 0,
-      y: 20,
+      ...(horizontal ? {x: 20} : {y:20}),
       transition: { type: "spring", damping: 10, stiffness: 120 },
     },
     visible: {
       opacity: 1,
-      y: 0,
+      ...(horizontal ? {x: 0} : {y:0}),
       transition: { type: "spring", damping: 10, stiffness: 120 },
     },
   };
   return (
     <motion.div
-      className="flex flex-wrap overflow-hidden break-all"
+      className="flex flex-wrap overflow-hidden break-words"
       variants={container}
       initial="hidden"
       animate="visible"
