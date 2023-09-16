@@ -32,7 +32,7 @@ const Navbar: React.FC = () => {
           <AnimatedButtonsNavbar
             sentence="Annotate"
             styling="text-white"
-            link=""
+            link="/annotate"
           />
           <AnimatedButtonsNavbar sentence="Host" styling="text-white" link="" />
           <AnimatedButtonsNavbar
