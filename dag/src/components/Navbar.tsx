@@ -13,6 +13,7 @@ const Navbar: React.FC = () => {
       initial="hidden"
       animate="visible"
     >
+      
       <div className="flex w-full items-start justify-between">
         <button>
           <Image src={logo} alt="logo" width={150} height={150} />
@@ -22,7 +23,7 @@ const Navbar: React.FC = () => {
           <AnimatedButtonsNavbar
             sentence="Home"
             styling="text-white"
-            link="/index"
+            link="/"
           />
           <AnimatedButtonsNavbar
             sentence="Upload"
@@ -32,18 +33,18 @@ const Navbar: React.FC = () => {
           <AnimatedButtonsNavbar
             sentence="Annotate"
             styling="text-white"
-            link=""
+            link="/annotate"
           />
-          <AnimatedButtonsNavbar sentence="Host" styling="text-white" link="" />
+          <AnimatedButtonsNavbar sentence="Host" styling="text-white" link="/host" />
           <AnimatedButtonsNavbar
             sentence="Process"
             styling="text-white"
-            link=""
+            link="/process"
           />
           <AnimatedButtonsNavbar
             sentence="Dashboard"
             styling="text-white"
-            link=""
+            link="/dashboard"
           />
         </div>
       </div>
