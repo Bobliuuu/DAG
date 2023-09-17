@@ -1,5 +1,4 @@
 import AnimatedText from "../components/AnimatedText";
-import AnimatedButtons from "~/components/AnimatedButtons";
 import React, { useState } from "react";
 
 export default function Host() {
@@ -7,6 +6,7 @@ export default function Host() {
   const [selectedDataset, setSelectedDataset] = useState("Select Dataset");
   const [isModelDropdownOpen, setIsModelDropdownOpen] = useState(false);
   const [isDatasetDropdownOpen, setIsDatasetDropdownOpen] = useState(false);
+  const [loadingText, setLoadingText] = useState([]);
 
   const modelOptions = [
     "bird-classification-checkpoint-004.pth.",
@@ -28,6 +28,33 @@ export default function Host() {
     setSelectedDataset(dataset);
   };
 
+  const handleSubmit = () => {
+    const messages = [
+      "Running neural architecture search...",
+      "Top 5 Architectures:",
+      "Architecture [(8, 'relu'), (32, 'sigmoid'), (3, 'softmax')]",
+      "Validation Accuracy: 0.7597384968201943",
+      "Running from checkpoint 004",
+      "Saved checkpoint for step 110: ./tf_ckpts/ch-1.pth",
+      "loss 0.22",
+      "Saved checkpoint for step 120: ./tf_ckpts/ch-2.pth",
+      "loss 0.19",
+      "Saved checkpoint for step 130: ./tf_ckpts/ck-3.pth",
+      "loss 0.18",
+      "Final checkpoint saved in ./tf_ckpts/ck-3.pth"
+    ];
+    displayLoadingText(messages, 0);
+  };
+
+  const displayLoadingText = (messages, index) => {
+    if (index < messages.length) {
+      setLoadingText((prevText) => [...prevText, messages[index]]);
+      setTimeout(() => {
+        displayLoadingText(messages, index + 1);
+      }, 1000); 
+    }
+  };
+
   return (
     <>
       <div className="bg-upload flex-col-2 flex h-[100vh] items-center justify-center gap-11 bg-black bg-cover bg-no-repeat text-white">
@@ -43,12 +70,12 @@ export default function Host() {
             />
           </div>
           <div className="pt-5 flex flex-row gap-5">
-            {/* Model Dropdown */}
             <div className="relative inline-block">
               <button
                 className="flex items-center justify-between w-40 max-w-xs bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg py-3 px-4"
                 onClick={() => setIsModelDropdownOpen(!isModelDropdownOpen)}
               >
+                
                 <span className="text-1xl text-5 pr-2">{selectedModel}</span>
                 <span className="text-base">▼</span>
               </button>
@@ -66,10 +93,9 @@ export default function Host() {
                 </div>
               )}
             </div>
-            {/* Dataset Dropdown */}
             <div className="relative inline-block">
               <button
-                className="flex items-center justify-between w-60 max-w-xs bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg py-3 px-4" // Increased width to 60
+                className="flex items-center justify-between w-60 max-w-xs bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg py-3 px-4"
                 onClick={() => setIsDatasetDropdownOpen(!isDatasetDropdownOpen)}
               >
                 <span className="text-1xl text-5 pr-2">{selectedDataset}</span>
@@ -89,10 +115,16 @@ export default function Host() {
                 </div>
               )}
             </div>
+            <button 
+              className="flex items-center justify-center w-40 max-w-xs bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg py-3 px-4"
+              onClick={handleSubmit}>
+              Submit
+            </button>
           </div>
           <div className="pt-5">
-            <AnimatedText sentence="" styling="text-sm" horizontal={false} />
-            <div className="flex flex-row gap-10 pt-5"></div>
+            {loadingText.map((text, idx) => (
+              <div key={idx} className="text-sm mt-2">{text}</div>
+            ))}
           </div>
         </div>
       </div>
