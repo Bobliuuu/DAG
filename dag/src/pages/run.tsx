@@ -93,11 +93,6 @@ export default function Host() {
             <AnimatedText sentence="" styling="text-sm" horizontal={false} />
             <div className="flex flex-row gap-10 pt-5"></div>
           </div>
-          <AnimatedButtons
-  sentence="ADD DATASET"
-  styling="text-xl text-center flex w-[200px] h-[60px] bg-white text-black rounded-full shadow-lg"
-  link=""
-/>
         </div>
         <div></div>
       </div>
