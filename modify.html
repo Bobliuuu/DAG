@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modify Data</title>
+</head>
+<body>
+    <h1>Modify Data</h1>
+    <form method="POST">
+        <label for="nft">NFT:</label>
+        <input type="text" name="nft" value="{{ nft }}" readonly>
+        <br>
+        <label for="links">Links:</label>
+        <input type="text" name="links" value="{{ nft }}" placeholder="Enter links">
+        <br>
+        <label for="labels">Labels:</label>
+        <input type="text" name="labels" value="{{ nft }}" placeholder="Enter labels">
+        <br>
+        <input type="submit" value="Update Data">
+    </form>
+</body>
+</html>
