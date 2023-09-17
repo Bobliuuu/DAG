@@ -35,7 +35,7 @@ const Navbar: React.FC = () => {
             styling="text-white"
             link="/process"
           />
-
+<AnimatedButtonsNavbar sentence="Upload" styling="text-white" link="/upload" />
 <AnimatedButtonsNavbar sentence="Host" styling="text-white" link="/host" />
           <AnimatedButtonsNavbar
             sentence="Run Model"
