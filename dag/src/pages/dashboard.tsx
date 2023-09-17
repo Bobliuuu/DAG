@@ -11,7 +11,7 @@ export default function Dashboard() {
       <div className="bg-process flex-col-2 flex h-[100vh] items-center justify-center gap-11 bg-black bg-cover bg-no-repeat text-white">
         <div className="flex flex-col justify-center gap-y-4">
           <h1 className="text-7xl font-bold">
-            <AnimatedText sentence="Process" styling="" horizontal={false} />
+            <AnimatedText sentence="Dashboard" styling="" horizontal={false} />
           </h1>
           <AnimatedText
             sentence="Upload, run a model, and process it through our community!"

@@ -69,7 +69,7 @@ function App() {
         <div className="absolute top-10 right-10 w-80 h-60 bg-white bg-opacity-10 rounded">
   <h1 className="ml-5 mt-5 text-white underline text-3xl"><b>DATASET</b></h1>
   <p className='ml-5 text-white'>Flowers</p>
-  <h1 className="ml-5 text-white underline text-2xl"><b>CRYPTOCURRENCY PAYOUT</b></h1>
+  <h1 className="ml-5 text-white underline text-2xl"><b>TOTAL CRYPTO PAYOUT</b></h1>
   <p className='ml-5 text-white text-6xl font-bold'>0.01 ETH</p>
 </div>
 

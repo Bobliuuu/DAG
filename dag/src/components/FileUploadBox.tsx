@@ -5,9 +5,10 @@ type FileUploadBoxProps = {
   styling: string;
   link: string;
   opacity: string;
+  imagePreview: string;
 };
 
-const FileUploadBox: React.FC<FileUploadBoxProps> = ({ styling, link, opacity }) => {
+const FileUploadBox: React.FC<FileUploadBoxProps> = ({ styling, link, opacity, imagePreview }) => {
   const container = {
     hidden: { opacity: 0, scale: 0 },
     visible: { opacity: 1, scale: 1, transition: { type: "spring", damping: 10, stiffness: 120 } }
@@ -25,7 +26,11 @@ const FileUploadBox: React.FC<FileUploadBoxProps> = ({ styling, link, opacity })
         }}
         whileTap={{ scale: 0.9 }}
     >
-        <motion.button className="p-3 opacity-25"></motion.button>
+        {imagePreview ? (
+            <motion.img src={imagePreview} alt="Uploaded Preview" className="w-full h-full object-cover" />
+        ) : (
+            <motion.button className="p-3 opacity-25"></motion.button>
+        )}
     </motion.div>
   );
 };
