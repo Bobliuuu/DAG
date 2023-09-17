@@ -19,7 +19,7 @@ export default function host() {
           <div className="pt-5">
           <AnimatedText
             sentence="Unused processing power? DAG can leverage it and help you earn cryptocurrency at the same time!"
-            styling="text-2xl"
+            styling="text-2xl font-light"
             horizontal={true}
           />
           </div>
@@ -37,9 +37,9 @@ export default function host() {
             horizontal={false}
           />
           <div className = "flex flex-row gap-10 pt-5">
-          <Image src={Windows} alt="Windows" width={100} height={80} />
-          <Image src={Linux} alt="Linux" width={100} height={80} />
-          <Image src={Apple} alt="Apple" width={100} height={80} />
+          <Image src={Windows} alt="Windows" width={100} height={50} />
+          <Image src={Linux} alt="Linux" width={100} height={50} />
+          <Image src={Apple} alt="Apple" width={100} height={50} />
           </div>
           </div>
           

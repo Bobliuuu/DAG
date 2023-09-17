@@ -9,18 +9,18 @@ export default function process() {
   return (
     <>
       <div className="bg-process flex-col-2 flex h-[100vh] items-center justify-center gap-11 bg-black bg-cover bg-no-repeat text-white">
-        <div className="flex flex-col justify-center">
-          <h1 className="text-7xl font-extrabold">
+        <div className="flex flex-col justify-center gap-y-4">
+          <h1 className="text-7xl font-bold">
             <AnimatedText sentence="Process and Run A Model" styling="" horizontal={false} />
           </h1>
           <AnimatedText
             sentence="Upload, run a model, and process it through our community!"
-            styling="text-2xl"
+            styling="text-2xl font-light"
             horizontal={true}
           />
           <AnimatedButtons
             sentence="Upload your model"
-            styling="text-3xl text-center flex max-w-xs bg-gradient-to-r from-purple-900 to-gray-900 rounded-full shadow-lg"
+            styling="font-light text-3xl text-center flex max-w-xs bg-gradient-to-r from-purple-700 to-gray-900 rounded-full shadow-lg"
             link=""
           />
         </div>

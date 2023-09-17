@@ -7,7 +7,7 @@ import Link from "next/link";
 const Navbar: React.FC = () => {
   return (
     <motion.div
-      className="flex h-[10vh] flex-wrap overflow-hidden break-all bg-black"
+      className="flex h-[10vh] flex-wrap overflow-hidden break-all bg-black pr-8"
       // variants={}
       initial="hidden"
       animate="visible"
