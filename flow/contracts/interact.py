@@ -1,3 +1,5 @@
+# Most of the work was done using the Playground, this is a test file for flow emulator
+
 from flow_py_sdk import flow_client, ProposalKey, Tx, Script
 
 async def run(self, ctx: Config):
@@ -8,7 +10,7 @@ async def run(self, ctx: Config):
             acc_addr = self.account_address
             sig = ctx.service_account_signer
             blk = await client.get_latest_block()
-            proposer = await client.get_account_at_latest_block(
+            prop = await client.get_account_at_latest_block(
                 address=account_address.bytes
             )
 
@@ -39,20 +41,18 @@ transaction {
     }
 }"""
 ,
-                reference_block_id=latest_block.id,
-                payer=account_address,
+                reference_block_id=blk.id,
+                payer=acc_addr,
                 proposal_key=ProposalKey(
                     key_address=acc_addr,
                     key_id=0,
-                    key_sequence_number=proposer.keys[0].sequence_number,
+                    key_sequence_number=prop.keys[0].sequence_number,
                 ),
-            ).add_arguments(self.receiver_address, self.metadata).add_authorizers(account_address).with_envelope_signature(
-                acc_addr,
-                0,
-                sig,
+            ).add_authorizers(account_address).with_envelope_signature(
+                acc_addr, sig,
             )
 
-            transaction_id = response.id
-
+        transaction_id = response.id
         transaction = await client.get_transaction(id=transaction_id)
+        print(transaction) 
         

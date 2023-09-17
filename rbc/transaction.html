@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transactions</title>
+</head>
+<body>
+    <h1>Transactions for {{ client.Name }}</h1>
+    <form method="post">
+        <label for="amount">Amount:</label>
+        <input type="number" id="amount" name="amount" required><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Transaction History:</h2>
+    <ul>
+        {% for transaction in transactions %}
+            <li>{{ transaction.amount }} ({{ transaction.type }})</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

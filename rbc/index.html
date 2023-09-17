@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Money App - Clients</title>
+</head>
+<body>
+    <h1>Clients</h1>
+    <ul>
+        {% for client in clients %}
+            <li>
+                <a href="{{ url_for('transaction', client_id=client._id) }}">{{ client.Name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('create_client') }}">Create New Client</a>
+</body>
+</html>
