@@ -24,6 +24,11 @@ function App() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [ethValue, setEthValue] = useState(0.01);
+
+  const updateEthValue = () => {
+    setEthValue((prevValue) => prevValue + 0.001);
+  };
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -43,10 +48,12 @@ function App() {
 
   const handleYesClick = () => {
     nextSlide(); // Go to the next slide
+    updateEthValue(); 
   };
 
   const handleNoClick = () => {
     nextSlide(); // Go to the next slide
+    updateEthValue();
   };
 
   return (
@@ -70,7 +77,7 @@ function App() {
   <h1 className="ml-5 mt-5 text-white underline text-3xl"><b>DATASET</b></h1>
   <p className='ml-5 text-white'>Flowers</p>
   <h1 className="ml-5 text-white underline text-2xl"><b>TOTAL CRYPTO PAYOUT</b></h1>
-  <p className='ml-5 text-white text-6xl font-bold'>0.01 ETH</p>
+  <p className='ml-5 text-white text-6xl font-bold'>{ethValue.toFixed(3)} ETH</p>
 </div>
 
 
