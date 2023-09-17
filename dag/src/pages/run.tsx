@@ -1,4 +1,5 @@
 import AnimatedText from "../components/AnimatedText";
+import AnimatedButtons from "~/components/AnimatedButtons";
 import React, { useState } from "react";
 
 export default function Host() {
@@ -94,7 +95,6 @@ export default function Host() {
             <div className="flex flex-row gap-10 pt-5"></div>
           </div>
         </div>
-        <div></div>
       </div>
     </>
   );
