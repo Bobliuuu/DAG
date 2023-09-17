@@ -11,7 +11,7 @@ export default function run() {
       <div className="bg-process flex-col-2 flex h-[100vh] items-center justify-center gap-11 bg-black bg-cover bg-no-repeat text-white">
         <div className="flex flex-col justify-center gap-y-4">
           <h1 className="text-7xl font-bold">
-            <AnimatedText sentence="Process" styling="" horizontal={false} />
+            <AnimatedText sentence="Run" styling="" horizontal={false} />
           </h1>
           <AnimatedText
             sentence="Run your model, and we'll validate"
@@ -19,8 +19,8 @@ export default function run() {
             horizontal={true}
           />
           <AnimatedButtons
-            sentence="Upload your model"
-            styling="font-light text-3xl text-center flex max-w-xs bg-gradient-to-r from-purple-700 to-gray-900 rounded-full shadow-lg"
+            sentence="Run your model"
+            styling="font-light text-2xl text-center flex max-w-xs bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg"
             link=""
           />
         </div>

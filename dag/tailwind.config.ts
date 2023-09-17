@@ -13,6 +13,7 @@ export default {
       'landing': "url('/img/graphics/landingbackground.png')",
       'host': "url('/img/graphics/hostbackground.png')",
       'annotate': "url('/img/graphics/annotatebackground.png')",
+      'warped': "url('/img/graphics/warpedbackground.png')",
     }
   },
   },

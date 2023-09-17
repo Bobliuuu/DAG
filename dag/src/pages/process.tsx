@@ -20,7 +20,7 @@ export default function process() {
           />
           <AnimatedButtons
             sentence="Upload your model"
-            styling="font-light text-3xl text-center flex max-w-xs bg-gradient-to-r from-purple-700 to-gray-900 rounded-full shadow-lg"
+            styling="font-light text-2xl text-center flex max-w-xs bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg"
             link=""
           />
         </div>

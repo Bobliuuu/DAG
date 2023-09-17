@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
       <Image src={logo} alt="logo" width={150} height={150} />
       <AnimatedButtons sentence = "Made by the DAG team" styling = "text-gray-400" link=""/>
       </div>
-      <div className = "flex flex-col">
+      <div className = "flex flex-col ">
       <AnimatedButtons sentence = "DAG" styling = "text-white" link=""/>
       <AnimatedButtons sentence = "See how it works" styling = "text-gray-400" link=""/>
       <AnimatedButtons sentence = "Contact us" styling = "text-gray-400" link=""/>

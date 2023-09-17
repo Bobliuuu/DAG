@@ -17,7 +17,7 @@ const AnimatedButtons: React.FC<AnimatedButtonsProps> = ({ sentence, styling, li
     whileTap={{ scale: 0.9}}>
           <motion.button className = "p-3"
 >
-            <h2 className={`font-thin flex`}>
+            <h2 className={`font-light flex`}>
               {sentence}
           </h2>
           </motion.button>

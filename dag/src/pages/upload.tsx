@@ -30,7 +30,7 @@ export default function Upload() {
 
           <AnimatedButtons
             sentence="Upload Data"
-            styling="text-xl text-center flex w-[200px] h-[60px]  bg-gradient-to-r from-purple-900 to-gray-950 rounded-full shadow-lg"
+            styling="text-xl text-center flex w-[200px] h-[60px]  bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg"
             link=""
           />
         </div>

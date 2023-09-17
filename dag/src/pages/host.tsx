@@ -1,14 +1,16 @@
-"use client";
-import Head from "next/head";
-import Link from "next/link";
 import AnimatedText from "../components/AnimatedText";
-import AnimatedButtons from "~/components/AnimatedButtons";
-import FileUploadBox from "~/components/FileUploadBox";
-import Windows from "public/img/graphics/Windows.png";
-import Linux from "public/img/graphics/Linux.png";
-import Apple from "public/img/graphics/Apple.png";
-import Image from "next/image";
+import React, { useState } from "react";
+
 export default function host() {
+  const [selectedOption, setSelectedOption] = useState("Select");
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+  const options = ["bird-classification-checkpoint-004.pth.", "lizard-classification-checkpoint-005.pth. ", "bird-classification-checkpoint-007.pth. "];
+
+  const handleOptionSelect = (option) => {
+    setSelectedOption(option);
+  };
+
   return (
     <>
       <div className="bg-upload flex-col-2 flex h-[100vh] items-center justify-center gap-11 bg-black bg-cover bg-no-repeat text-white">
@@ -17,36 +19,50 @@ export default function host() {
             <AnimatedText sentence="Host  Your  Device" styling="" horizontal={true} />
           </h1>
           <div className="pt-5">
-          <AnimatedText
-            sentence="Unused processing power? DAG can leverage it and help you earn cryptocurrency at the same time!"
-            styling="text-2xl font-light"
-            horizontal={true}
-          />
+            <AnimatedText
+              sentence="Unused processing power? DAG can leverage it and help you earn cryptocurrency at the same time!"
+              styling="text-2xl font-light"
+              horizontal={true}
+            />
+          </div>
+          <div className="pt-5 relative inline-block">
+          <button
+  className="flex items-center justify-between w-32 max-w-xs bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg py-3 px-4" // Added px-4
+  onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+>
+  <span className="text-1xl text-5 pr-2">{selectedOption}</span> 
+  <span className="text-base">▼</span>
+</button>
+
+
+            {isDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 bg-white border border-gray-300 rounded-lg shadow-lg">
+                {options.map((option) => (
+                  <button
+                    key={option}
+                    onClick={() => handleOptionSelect(option)}
+                    className="block w-full py-2 px-4 text-gray-800 hover:bg-gray-200"
+                  >
+                    {option}
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
           <div className="pt-5">
-          <AnimatedButtons
-            sentence="Download the client"
-            styling="text-3xl text-center flex max-w-xs bg-gradient-to-r from-purple-900 to-gray-900 rounded-full shadow-lg"
-            link=""
-          />
+            <AnimatedText
+              sentence=""
+              styling="text-sm"
+              horizontal={false}
+            />
+            <div className="flex flex-row gap-10 pt-5">
+              {/* Images here */}
+            </div>
           </div>
-          <div className="pt-5">
-          <AnimatedText
-            sentence="Minimum client requirements:"
-            styling="text-sm"
-            horizontal={false}
-          />
-          <div className = "flex flex-row gap-10 pt-5">
-          <Image src={Windows} alt="Windows" width={100} height={50} />
-          <Image src={Linux} alt="Linux" width={100} height={50} />
-          <Image src={Apple} alt="Apple" width={100} height={50} />
-          </div>
-          </div>
-          
         </div>
-        <div>
-        </div>
+        <div></div>
       </div>
     </>
   );
 }
+

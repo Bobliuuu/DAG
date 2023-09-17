@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import AnimatedText from "../components/AnimatedText";
+import AnimatedButtons from "~/components/AnimatedButtons";
 
 function App() {
   const slides = [
@@ -40,6 +41,14 @@ function App() {
     setCurrentIndex(slideIndex);
   };
 
+  const handleYesClick = () => {
+    nextSlide(); // Go to the next slide
+  };
+
+  const handleNoClick = () => {
+    nextSlide(); // Go to the next slide
+  };
+
   return (
     <div className="bg-annotate relative mx-auto h-screen w-full max-w-screen-2xl overflow-hidden px-4 py-16 flex flex-col justify-center items-center">
       {/* Header Text */}
@@ -51,28 +60,41 @@ function App() {
         styling="text-2xl font-light text-white text-center"
         horizontal={true}
       />
-    {/* Add a blank line for seperation */}
-    <div className="h-6"></div>
-
+      {/* Add a blank line for separation */}
+      <div className="h-6"></div>
+      {/* Buttons Container */}
       {/* Slideshow Container */}
-      <div className="w-full h-80 flex-col items-center justify-center">
+      <div className="w-full h-80 flex-col items-center justify-center relative">
+        {/* Curved white rectangle overlay */}
+        <div className="absolute top-10 right-10 w-80 h-60 bg-white bg-opacity-10 rounded">
+  <h1 className="ml-5 mt-5 text-white underline text-3xl"><b>DATASET</b></h1>
+  <p className='ml-5 text-white'>Flowers</p>
+</div>
+
+
         <div
           className="w-full h-80 rounded-2xl bg-cover bg-center duration-500 md:w-full"
           style={{
             backgroundImage: `url(${slides[currentIndex].url})`,
           }}
         ></div>
-
-        {/* Left Arrow */}
-        <div className="absolute left-5 top-1/2 -translate-y-1/2 transform cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white">
-          <BsChevronCompactLeft onClick={prevSlide} size={30} />
+      
+        {/* Add a blank line for separation */}
+        <div className="h-6"></div>
+        <div className="flex justify-center space-x-4">
+          <div
+            className="font-light text-1xl text-center flex items-center justify-center w-10 h-10 bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg text-white font-bold cursor-pointer"
+            onClick={handleYesClick}
+          >
+            Yes
+          </div>
+          <div
+            className="font-light text-1xl text-center flex items-center justify-center w-10 h-10 bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg text-white font-bold cursor-pointer"
+            onClick={handleNoClick}
+          >
+            No
+          </div>
         </div>
-
-        {/* Right Arrow */}
-        <div className="absolute right-5 top-1/2 -translate-y-1/2 transform cursor-pointer rounded-full bg-black/20 p-2 text-2xl text-white">
-          <BsChevronCompactRight onClick={nextSlide} size={30} />
-        </div>
-
         {/* Slide Indicators */}
         <div className="mt-4 flex justify-center space-x-2">
           {slides.map((slide, slideIndex) => (
