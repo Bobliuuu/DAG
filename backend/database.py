@@ -85,4 +85,3 @@ for document in all_documents:
 
 
 client.close()
-
