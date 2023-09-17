@@ -21,9 +21,6 @@ export default function Upload() {
     reader.readAsDataURL(files[0]);
 };
 
-
-  
-
   return (
     <>
       <div className="bg-upload flex-col-2 flex h-[100vh] items-center justify-center gap-11 bg-black bg-cover bg-no-repeat text-white">
