@@ -13,6 +13,7 @@ export default function Upload() {
           <h1 className="text-7xl font-bold">
             <AnimatedText sentence="Upload Now" styling="" horizontal={false} />
           </h1>
+
           <AnimatedText
             sentence="Sort. Choose. Get Paid."
             styling="text-xl font-extralight"
@@ -23,6 +24,10 @@ export default function Upload() {
             styling="text-xl font-extralight"
             horizontal={true}
           />
+
+          {/* Add a blank line for seperation */}
+<div className="h-6"></div>
+
           <AnimatedButtons
             sentence="Upload Data"
             styling="text-xl text-center flex w-[200px] h-[60px]  bg-gradient-to-r from-purple-900 to-gray-950 rounded-full shadow-lg"

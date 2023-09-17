@@ -5,7 +5,7 @@ import AnimatedText from "../components/AnimatedText";
 import AnimatedButtons from "~/components/AnimatedButtons";
 import FileUploadBox from "~/components/FileUploadBox";
 
-export default function process() {
+export default function run() {
   return (
     <>
       <div className="bg-process flex-col-2 flex h-[100vh] items-center justify-center gap-11 bg-black bg-cover bg-no-repeat text-white">
@@ -14,7 +14,7 @@ export default function process() {
             <AnimatedText sentence="Process" styling="" horizontal={false} />
           </h1>
           <AnimatedText
-            sentence="Upload, run a model, and process it through our community!"
+            sentence="Run your model, and we'll validate"
             styling="text-2xl font-light"
             horizontal={true}
           />

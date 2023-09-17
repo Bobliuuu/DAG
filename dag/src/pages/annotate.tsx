@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
+import AnimatedText from "../components/AnimatedText";
 
 function App() {
   const slides = [
@@ -40,22 +41,23 @@ function App() {
   };
 
   return (
-    <div className="bg-annotate relative mx-auto h-screen w-full max-w-screen-2xl overflow-hidden px-4 py-16">
+    <div className="bg-annotate relative mx-auto h-screen w-full max-w-screen-2xl overflow-hidden px-4 py-16 flex flex-col justify-center items-center">
       {/* Header Text */}
-      <h1 className="mb-8 text-center text-7xl font-bold text-white">
-        Annotate and Earn
+      <h1 className="text-7xl font-bold text-white text-center">
+        <AnimatedText sentence="Annotate and Earn" styling="" horizontal={false} />
       </h1>
-      <body>
-        <p className="text-1.5xl mb-8 text-center text-white">
-          Validate, annotate, and earn while helping to enrich the DAG
-          community.
-        </p>
-      </body>
+      <AnimatedText
+        sentence="Validate, annotate, and earn while helping to enrich the DAG community."
+        styling="text-2xl font-light text-white text-center"
+        horizontal={true}
+      />
+    {/* Add a blank line for seperation */}
+    <div className="h-6"></div>
 
       {/* Slideshow Container */}
-      <div className="w-70 h-80 flex-col items-center justify-center">
+      <div className="w-full h-80 flex-col items-center justify-center">
         <div
-          className="w-70 h-80 rounded-2xl bg-cover bg-center duration-500 md:w-full"
+          className="w-full h-80 rounded-2xl bg-cover bg-center duration-500 md:w-full"
           style={{
             backgroundImage: `url(${slides[currentIndex].url})`,
           }}

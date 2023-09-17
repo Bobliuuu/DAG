@@ -40,6 +40,19 @@ const Navbar: React.FC = () => {
             styling="text-white"
             link="/process"
           />
+
+<AnimatedButtonsNavbar sentence="Host" styling="text-white" link="/host" />
+          <AnimatedButtonsNavbar
+            sentence="Run Model"
+            styling="text-white"
+            link="/run"
+          />
+
+           <AnimatedButtonsNavbar
+            sentence="Add Wallet"
+            styling="text-white"
+            link="/wallet"
+          />
           {/* <AnimatedButtonsNavbar
             sentence="Dashboard"
             styling="text-white"

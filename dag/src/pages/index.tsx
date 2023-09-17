@@ -23,12 +23,12 @@ export default function Home() {
           />
           <div className = "flex justify-center flex-row gap-7">
           <AnimatedButtons
-            sentence="Dashboard"
+            sentence="DASHBOARD"
             styling="text-xl text-center flex w-[200px] h-[60px]  bg-gradient-to-r from-purple-900 to-gray-950 rounded-full shadow-lg"
             link=""
           />
           <AnimatedButtons
-            sentence="Dashboard"
+            sentence="READ DOCS"
             styling="text-xl text-center flex w-[200px] h-[60px]  bg-gray-950 rounded-full shadow-lg"
             link=""
           />
