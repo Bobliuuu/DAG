@@ -24,6 +24,7 @@ const Navbar: React.FC = () => {
             styling="text-white"
             link="/"
           />
+          <AnimatedButtonsNavbar sentence="Dashboard" styling="text-white" link="/host" />
           <AnimatedButtonsNavbar
             sentence="Upload"
             styling="text-white"
@@ -34,7 +35,6 @@ const Navbar: React.FC = () => {
             styling="text-white"
             link="/annotate"
           />
-          <AnimatedButtonsNavbar sentence="Host" styling="text-white" link="/host" />
           <AnimatedButtonsNavbar
             sentence="Process"
             styling="text-white"
