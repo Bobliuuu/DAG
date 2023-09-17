@@ -19,7 +19,7 @@ export default function Upload() {
       }
     };
     reader.readAsDataURL(files[0]);
-  };
+};
 
   return (
     <>
