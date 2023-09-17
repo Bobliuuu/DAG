@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
 import AnimatedButtonsNavbar from "./AnimatedButtonsNavbar";
 import logo from "public/img/graphics/Logo.png";
@@ -41,11 +40,11 @@ const Navbar: React.FC = () => {
             styling="text-white"
             link="/process"
           />
-          <AnimatedButtonsNavbar
+          {/* <AnimatedButtonsNavbar
             sentence="Dashboard"
             styling="text-white"
-            link="/dashboard"
-          />
+            link="/"
+          /> */}
         </div>
       </div>
     </motion.div>

@@ -1,5 +1,4 @@
 "use client";
-import React from "react";
 import { motion } from "framer-motion";
 import AnimatedButtons from "./AnimatedButtons";
 import Link from "next/link";

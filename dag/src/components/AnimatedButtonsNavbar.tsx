@@ -1,5 +1,4 @@
 "use client";
-import React, { useRef } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -24,7 +23,7 @@ const AnimatedButtonsNavbar: React.FC<AnimatedButtonsNavbarProps> = ({
   return (
     <Link href={link}>
       <motion.div
-        className={`${styling} items-cetner justify-center`}
+        className={`${styling} items-center justify-center`}
         variants={container}
         initial="hidden"
         animate="visible"
@@ -34,8 +33,8 @@ const AnimatedButtonsNavbar: React.FC<AnimatedButtonsNavbarProps> = ({
         }}
         whileTap={{ scale: 0.9 }}
       >
-        <motion.button className="flex h-[30px] w-[125px] items-center justify-center rounded-full border-2 border-white bg-gray-950 p-3 hover:opacity-70">
-          <h2 className={`flex font-thin`}>{sentence}</h2>
+        <motion.button className="flex h-[30px] w-[100px] items-center justify-center rounded-full border-2 border-white bg-gray-950 p-3 hover:opacity-70">
+          <h2 className={`flex text-xs font-light`}>{sentence}</h2>
         </motion.button>
       </motion.div>
     </Link>
