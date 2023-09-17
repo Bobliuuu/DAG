@@ -78,6 +78,12 @@ function App() {
   <p className='ml-5 text-white'>Flowers</p>
   <h1 className="ml-5 text-white underline text-2xl"><b>TOTAL CRYPTO PAYOUT</b></h1>
   <p className='ml-5 text-white text-6xl font-bold'>{ethValue.toFixed(3)} ETH</p>
+  
+  <AnimatedButtons
+            sentence="Payout"
+            styling="text-l text-center ml-5 flex w-[120px] h-[37px] bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg text-white"
+            link="/annotate"
+          />
 </div>
 
 

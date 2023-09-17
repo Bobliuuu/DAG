@@ -27,7 +27,7 @@ export default function host() {
           </div>
           <div className="pt-5 relative inline-block">
           <button
-  className="flex items-center justify-between w-32 max-w-xs bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg py-3 px-4" // Added px-4
+  className="flex items-center justify-between w-32 max-w-xs bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg py-3 px-4"
   onClick={() => setIsDropdownOpen(!isDropdownOpen)}
 >
   <span className="text-1xl text-5 pr-2">{selectedOption}</span> 
@@ -56,7 +56,6 @@ export default function host() {
               horizontal={false}
             />
             <div className="flex flex-row gap-10 pt-5">
-              {/* Images here */}
             </div>
           </div>
         </div>

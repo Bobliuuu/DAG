@@ -3,26 +3,23 @@ import Link from "next/link";
 import AnimatedText from "../components/AnimatedText";
 import AnimatedButtons from "~/components/AnimatedButtons";
 import FileUploadBox from "~/components/FileUploadBox";
-import { useState } from "react";
+import { useState } from "react"; // Import useState
 
 export default function Upload() {
   const [selectedFiles, setSelectedFiles] = useState([]);
-  const [imagePreviewUrl, setImagePreviewUrl] = useState('');
+  const [imagePreviewUrl, setImagePreviewUrl] = useState("");
   const handleFileChange = (event) => {
     const files = event.target.files;
     setSelectedFiles(files);
 
     const reader = new FileReader();
     reader.onloadend = () => {
-        if (typeof reader.result === "string") {
-            setImagePreviewUrl(reader.result);
-        }
-    }
+      if (typeof reader.result === "string") {
+        setImagePreviewUrl(reader.result);
+      }
+    };
     reader.readAsDataURL(files[0]);
-};
-
-
-  
+  };
 
   return (
     <>
@@ -32,16 +29,14 @@ export default function Upload() {
             <AnimatedText sentence="Upload Now" styling="" horizontal={false} />
           </h1>
 
-          <AnimatedText
-            sentence="Sort. Choose. Get Paid."
-            styling="text-xl font-extralight"
-            horizontal={false}
-          />
+          <AnimatedText sentence="Sort. Choose. Get Paid." styling="text-xl font-extralight" horizontal={false} />
           <AnimatedText
             sentence="Select various datasets from your device."
             styling="text-xl font-extralight"
             horizontal={true}
           />
+
+          {/* Add a blank line for separation */}
           <div className="h-6"></div>
 
           <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white" htmlFor="multiple_files">
@@ -54,7 +49,15 @@ export default function Upload() {
             multiple
             onChange={handleFileChange}
           />
+          <div className="h-6"></div>
+
+          <AnimatedButtons
+            sentence="Submit"
+            styling="text-l text-center flex w-[120px] h-[37px] bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg"
+            link="/annotate"
+          />
         </div>
+        
         <div>
           <h1 className="text-7xl font-extrabold">
             <FileUploadBox
@@ -67,7 +70,7 @@ export default function Upload() {
         </div>
       </div>
       {selectedFiles.length > 0 && (
-        <div className="text-white">
+        <div className="text-white mt-4">
           <p>Selected files:</p>
           <ul>
             {Array.from(selectedFiles).map((file, index) => (

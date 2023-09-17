@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link"
 type AnimatedButtonsProps = {
   sentence: string;
   styling: string;
@@ -15,12 +16,14 @@ const AnimatedButtons: React.FC<AnimatedButtonsProps> = ({ sentence, styling, li
       transition: { duration: 0.3, type: "spring" },
     }}
     whileTap={{ scale: 0.9}}>
+      <Link href= {link}> 
           <motion.button className = "p-3"
 >
             <h2 className={`font-light flex`}>
               {sentence}
           </h2>
           </motion.button>
+        </Link>
           </motion.div>
   );
 };

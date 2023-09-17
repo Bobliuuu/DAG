@@ -46,7 +46,7 @@ const mapLinks = dataset.map_dataset.links;
           <AnimatedButtons
             sentence="DASHBOARD"
             styling="text-xl text-center flex w-[200px] h-[60px]  bg-gradient-to-r from-purple-400 to-purple-950 rounded-full shadow-lg"
-            link=""
+            link="/dashboard"
           />
           <AnimatedButtons
             sentence="READ DOCS"
@@ -140,6 +140,12 @@ const mapLinks = dataset.map_dataset.links;
             styling="text-white"
             link=""
           />
+
+<AnimatedButtons
+  sentence="ADD DATASET"
+  styling="text-xl text-center flex w-[180px] h-[40px] bg-white text-black rounded-full shadow-lg"
+  link=""
+/>
 
         </div>
         <div className="flex flex-row items-center justify-center gap-4 pt-4 text-center">
