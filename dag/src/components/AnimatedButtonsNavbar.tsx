@@ -34,7 +34,7 @@ const AnimatedButtonsNavbar: React.FC<AnimatedButtonsNavbarProps> = ({
         }}
         whileTap={{ scale: 0.9 }}
       >
-        <motion.button className="flex h-[30px] w-[125px] items-center justify-center rounded-full border-2 border-white bg-gray-800 p-3 hover:opacity-70">
+        <motion.button className="flex h-[30px] w-[125px] items-center justify-center rounded-full border-2 border-white bg-gray-950 p-3 hover:opacity-70">
           <h2 className={`flex font-thin`}>{sentence}</h2>
         </motion.button>
       </motion.div>

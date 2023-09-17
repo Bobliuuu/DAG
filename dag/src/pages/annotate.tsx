@@ -72,7 +72,7 @@ function App() {
         </div>
 
         {/* Slide Indicators */}
-        <div className="absolute bottom-4 flex w-full justify-center space-x-2">
+        <div className="mt-4 flex justify-center space-x-2">
           {slides.map((slide, slideIndex) => (
             <div
               key={slideIndex}
