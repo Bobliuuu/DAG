@@ -15,7 +15,7 @@ const ImageSearchBox: React.FC<ImageSearchBoxProps> = ({ styling, link, opacity 
 
   return (
     <motion.div 
-        className={`${styling} justify-center items-center ${opacity}`} 
+        className={`${styling} justify-center items-center  overflow-hidden ${opacity}`} 
         variants={container} 
         initial="hidden" 
         animate="visible" 
@@ -25,8 +25,8 @@ const ImageSearchBox: React.FC<ImageSearchBoxProps> = ({ styling, link, opacity 
         }}
         whileTap={{ scale: 0.9 }}
     >
-        <motion.button className="p-3 opacity-25">
-          <Image src = {link} alt = {link}/>
+        <motion.button className="">
+          <Image src = {link} alt = {link} width={400} height = {400}/>
         </motion.button>
     </motion.div>
   );
