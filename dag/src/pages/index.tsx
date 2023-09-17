@@ -110,7 +110,7 @@ const mapLinks = dataset.map_dataset.links;
           </div>
       
       </div>
-      <div className="bg-warped flex-col-2 flex h-[60vh] items-center justify-center bg-cover bg-no-repeat gap-11 bg-cover text-white">
+      <div className="bg-warped flex-col-2 flex h-[70vh] items-center justify-center bg-cover bg-no-repeat gap-11 bg-cover text-white">
      
       <div className="flex items-center justify-between flex-col gap-y-3">
       <SearchBar/>
@@ -162,9 +162,12 @@ const mapLinks = dataset.map_dataset.links;
     opacity="opacity-5"
     link={mapLinks[2] || ""}
 />
+
         </div>
       </div>
+      
       </div>
+      
     </>
   );
 }
